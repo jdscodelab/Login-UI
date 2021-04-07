@@ -1,0 +1,41 @@
+﻿<Application x:Class="LoginUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:LoginUI"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <!--Animation on page display-->
+        <Style TargetType="{x:Type Page}">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard Storyboard.TargetProperty="Margin" SpeedRatio="5">
+                            <ThicknessAnimation>
+                                <ThicknessAnimation.From>
+                                    <!--to slide from bottom to top-->
+                                    <Thickness 
+                                        Left="0"
+                                        Top="0"
+                                        Bottom="-525"
+                                        Right="0"/>
+                                </ThicknessAnimation.From>
+                                <ThicknessAnimation.To>
+                                    <!--to slide from bottom to top-->
+                                    <Thickness 
+                                        Left="0"
+                                        Top="0"
+                                        Bottom="0"
+                                        Right="0"/>
+                                </ThicknessAnimation.To>
+                            </ThicknessAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <PathGeometry x:Key="showPass"
+                       Figures="M15 5C6.081703 5 0.32098813 14.21118 0.21679688 14.378906 A 1 1 0 0 0 0 15 A 1 1 0 0 0 0.16210938 15.544922 A 1 1 0 0 0 0.16601562 15.550781C0.18320928 15.586261 5.0188313 25 15 25C24.938822 25 29.767326 15.678741 29.826172 15.564453 A 1 1 0 0 0 29.837891 15.544922 A 1 1 0 0 0 30 15 A 1 1 0 0 0 29.785156 14.380859 A 1 1 0 0 0 29.783203 14.378906C29.679012 14.21118 23.918297 5 15 5 z M 15 8C18.866 8 22 11.134 22 15C22 18.866 18.866 22 15 22C11.134 22 8 18.866 8 15C8 11.134 11.134 8 15 8 z M 15 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 18 A 3 3 0 0 0 18 15 A 3 3 0 0 0 15 12 z"/>
+    </Application.Resources>
+</Application>
